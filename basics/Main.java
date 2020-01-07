@@ -22,10 +22,8 @@ public class Main {
 
   // pluralize function
   public static String pluralize(String word, int count) {
-    if (count == 0 || count > 1) {
-      return word + 's';
-    } else if (count == 1) {
-      return word;
+    if (count != 1) {
+      return word + "s";
     } else {
       return word;
     }
