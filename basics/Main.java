@@ -34,16 +34,21 @@ public class Main {
   // flipping coins function
   public static void flipNHeads(int flips) {
     int headCount = 0;
+    int mostHeadsInARow = 0;
     for (int i = 0; i < flips; i++) {
       double random = Math.random();
       if (random < 0.5) {
+        headCount = 0;
         System.out.println("tails");
       } else {
         headCount++;
         System.out.println("heads");
+        if (headCount > mostHeadsInARow) {
+          mostHeadsInARow = headCount;
+        } 
       }
     }
-    System.out.println("It took " + flips + " " + pluralize("flip", flips) + " to flip " + headCount + " " + pluralize("head", headCount) + " in a row.");
+    System.out.println("It took " + flips + " " + pluralize("flip", flips) + " to flip " + mostHeadsInARow + " " + pluralize("head", mostHeadsInARow) + " in a row.");
   }
 
   // clock function
