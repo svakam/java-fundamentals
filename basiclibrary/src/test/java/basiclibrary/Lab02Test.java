@@ -69,6 +69,6 @@ public class Lab02Test {
             System.out.println(Lab02.findLowestAverage(weeklyMonthTemperatures)[i]);
         }
         // can't figure out why this is giving me a false - the above for loop prints the expected array
-        assertTrue(Lab02.findLowestAverage(weeklyMonthTemperatures) == lowestAvgArray);
+        assertArrayEquals(Lab02.findLowestAverage(weeklyMonthTemperatures), lowestAvgArray);
     }
 }
