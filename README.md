@@ -10,4 +10,6 @@
     - Contains duplicates: returns true or false if an array contains duplicates. 
     - Calculate averages: accepts an array of integers and calculates and returns the average of all the values in an array. 
     - Array of arrays: finds the average of each subarray and returns the array with the lowest average. Uses the function of calculating averages to facilitate this. 
-
+    - Analyze weather data: accepts an array of arrays and tests for lowest average in a given week. 
+    - Tally votes: accepts an ArrayList and returns a string that declares the key with the highest associated value. 
+    - Linter: make a linter method that lints through JS files to check for semicolons used properly. 
