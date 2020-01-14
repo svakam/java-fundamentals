@@ -7,8 +7,23 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class AppTest {
-    @Test public void testAppHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull("app should have a greeting", classUnderTest.getGreeting());
+    // test linter on file with many errors
+    @Test public void testLinter() {
+        App.linterSemiColon("src/main/resources/gates.js");
+    }
+
+    // test on file with no errors
+    @Test public void noErrors() {
+        App.linterSemiColon("src/main/resources/gatesnoerrors.js");
+    }
+
+    // test with one error
+    @Test public void oneError() {
+        App.linterSemiColon("src/main/resources/gatesoneerror.js");
+    }
+
+    // test with few errors
+    @Test public void fewErrors() {
+        App.linterSemiColon("src/main/resources/gatesfewerrors.js");
     }
 }
