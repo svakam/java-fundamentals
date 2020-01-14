@@ -3,7 +3,6 @@ package basiclibrary;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -29,8 +28,8 @@ public class Lab03Test {
         votes.add("Bush");
         votes.add("Hedge");
         votes.add("Bush");
-//        String winner = Lab03.tally(votes);
-//        System.out.println(winner + " received the most votes!");
-        Lab03.tally(votes);
+        String winner = Lab03.tally(votes);
+        String test = winner + " received the most votes!";
+        assertEquals("Bush received the most votes!", test);
     }
 }

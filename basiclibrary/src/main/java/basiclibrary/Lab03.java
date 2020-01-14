@@ -34,7 +34,8 @@ public class Lab03 {
         return stringSoFar;
     }
 
-    public static void tally(ArrayList<String> namesVotedFor) {
+    public static String tally(ArrayList<String> namesVotedFor) {
+        // declare new hashmap and input names and votes
         HashMap<String,Integer> namesAndVotes = new HashMap<>();
         namesVotedFor.forEach(name -> {
             if (!namesAndVotes.containsKey(name)) {
@@ -44,10 +45,18 @@ public class Lab03 {
                 namesAndVotes.put(name, votesForName + 1);
             }
         });
-        // get counts of all votes for each name
-        Set<String> listOfAllNames = namesAndVotes.keySet();
-        listOfAllNames.forEach(name -> {
-            System.out.println(name);
-        });
+
+        // find which name has the most votes
+        String[] names = namesAndVotes.keySet().toArray(new String[0]);
+        int mostVotes = 0;
+        String nameOfMostVotes = "";
+        for (String name : names) {
+            int votesForName = namesAndVotes.get(name);
+            if (mostVotes < votesForName) {
+                mostVotes = votesForName;
+                nameOfMostVotes = name;
+            }
+        }
+        return nameOfMostVotes;
     }
 }
