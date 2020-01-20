@@ -13,3 +13,5 @@
     - Analyze weather data: accepts an array of arrays and tests for lowest average in a given week. 
     - Tally votes: accepts an ArrayList and returns a string that declares the key with the highest associated value. 
     - Linter: make a linter method that lints through JS files to check for semicolons used properly. 
+  - Inheritance:
+    - Tests our understanding of the concept of inheritance (superclasses, subclasses, etc.). Two classes, Restaurant and Review, are used to add reviews to a restaurant and update the restaurant's rating based on newly added reviews. Reviews are a subclass of a restaurant. 
