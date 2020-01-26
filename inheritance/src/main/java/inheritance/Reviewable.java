@@ -1,5 +1,6 @@
 package inheritance;
 
-public interface CanBeReviewed {
+public interface Reviewable {
     void addReview(Review newReview);
+    float updateRating();
 }
