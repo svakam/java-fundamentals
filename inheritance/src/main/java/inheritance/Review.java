@@ -15,7 +15,7 @@ public class Review {
     }
 
     // constructor only for movies
-    public movieReview(String bodyText, String author, int reviewStars, String movie) {
+    public Review(String bodyText, String author, int reviewStars, String movie) {
         this.bodyText = bodyText;
         this.author = author;
         this.reviewStars = reviewStars;

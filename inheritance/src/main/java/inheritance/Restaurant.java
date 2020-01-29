@@ -5,11 +5,11 @@ import java.util.ListIterator;
 
 public class Restaurant extends BusinessType {
     String price;
-    LinkedList<Review> allReviews;
 
-    public Restaurant(String name) {
+    public Restaurant(String name, String price) {
         super(name);
-        if (allReviews.size() > 0) {
+        this.price = price;
+        if (allReviews != null) {
             this.averageRating = updateRating();
         } else {
             this.averageRatingNA = "Rating unavailable. Add a review";
@@ -18,6 +18,11 @@ public class Restaurant extends BusinessType {
 
     // toString override
     public String toString() {
-        return "Name: " + name + "\nRating: " + averageRating + "\nPrice: " + price + "\n Reviews: " + allReviews;
+        if (this.allReviews != null) {
+            return "Name: " + name + "\nRating: " + averageRating + "\nPrice: " + price + "\n Reviews: " + allReviews;
+        }
+        else {
+            return "Name: " + name + "\nRating: " + averageRatingNA + "\nPrice: " + price + "\nReviews: not available";
+        }
     }
 }

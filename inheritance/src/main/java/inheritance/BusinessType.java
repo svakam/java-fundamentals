@@ -13,18 +13,17 @@ public class BusinessType implements Reviewable {
 
     public BusinessType(String name){
         this.name = name;
-        if (allReviews.size() > 0) {
-            this.averageRating = updateRating();
-        } else {
-            this.averageRatingNA = "Rating unavailable. Add a review";
-        }
     }
 
     // addReview should associate new review with restaurant instance
     // addReview should update star rating when new review associated
     public void addReview(Review newReview) {
         // link review to restaurant
-        allReviews.add(newReview);
+        if (allReviews != null) {
+            allReviews.add(newReview);
+        } else {
+            System.out.println("exception");
+        }
     }
 
     // iterate through LL, add up stars and divide by number of nodes present
@@ -37,6 +36,4 @@ public class BusinessType implements Reviewable {
         }
         return (float) totalStars / reviewCounter;
     }
-
-
 }
