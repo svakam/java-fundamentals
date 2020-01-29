@@ -1,6 +1,6 @@
 package inheritance;
 
 public interface ChangeMovies {
-    void addMovie();
-    void removeMovie();
+    void addMovie(String movie);
+    String removeMovie();
 }

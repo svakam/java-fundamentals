@@ -5,11 +5,10 @@ import java.util.LinkedList;
 public class Theater extends BusinessType implements ChangeMovies {
     // variables
     String movies;
-    LinkedList<Review> allReviews;
 
     public Theater(String name, String movie) {
         super(name);
-        if (allReviews.size() > 0) {
+        if (allReviews != null) {
             this.averageRating = updateRating();
         } else {
             this.averageRatingNA = "Rating unavailable. Add a review";
@@ -18,12 +17,15 @@ public class Theater extends BusinessType implements ChangeMovies {
         this.movies = movie;
     }
 
-    public void addMovie() {
-        // add movie to String movies
-        movies += "new movie";
+    public void addMovie(String movie) {
+        movies += ", " + movie;
     }
 
-    public void removeMovie() {
+    public String removeMovie() {
         // remove movie from String movies
+        // using substring API at commas
+        int index = movies.indexOf(",");
+        System.out.println("index = " + index);
+        return movies.substring(index+2);
     }
 }
